@@ -3,11 +3,11 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws ParseException {
 
-        SimpleDateFormat DATE_FORMATER = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+        SimpleDateFormat DATE_FORMATER = new SimpleDateFormat("dd-MM-yyyy");
 
-        String formatDatum = "18-02-2020 15:44";
+        String formatDatum = "18-02-2020";
         Calendar calendar = new GregorianCalendar(2020, 2, 18);
         Date date = null;
 
@@ -22,7 +22,7 @@ public class Main {
 
         List<Rezervace> rezervaces = new ArrayList<>();
 
-        RezervaceJizdenka weebTour = new RezervaceJizdenka("15-03-2020","Erik Rusnák", "10-03-2020",typProstredku.AUTOBUS, "69", "3b", "14:15");
+        RezervaceJizdenka weebTour = new RezervaceJizdenka("15-03-2019","Erik Rusnák", "10-03-2020",typProstredku.AUTOBUS, "69", "3b", "14:15");
         rezervaces.add(weebTour);
 
         RezervaceJizdenka crusadeTour = new RezervaceJizdenka("28-10-2020", "Holy Crusader", "14-02-2020", typProstredku.OTHER, "22", "Jerusalem", "6:00");
@@ -30,6 +30,9 @@ public class Main {
 
         RezervaceJizdenka terezinTour = new RezervaceJizdenka("12-08-2020", "Sherlock Gnomes", "06-08-2020", typProstredku.VLAK, "12c", "9 3/4", "11:00");
         rezervaces.add(terezinTour);
+
+
+           DATE_FORMATER.parse(weebTour.getDatum());
 
 
 
