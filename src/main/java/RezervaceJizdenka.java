@@ -1,4 +1,6 @@
-public class RezervaceJizdenka extends Rezervace{
+import java.util.Date;
+
+public class RezervaceJizdenka extends Rezervace {
 
     private typProstredku Prostredek;
     private String sedadlo;
@@ -6,14 +8,13 @@ public class RezervaceJizdenka extends Rezervace{
     private String odjezdoveStanoviste;
     private String odjezdDopravnihoprostredku;
 
-    public RezervaceJizdenka(String datum, String osoba, String datumVytvoreni, typProstredku prostredek, String sedadlo, String odjezdoveStanoviste, String odjezdDopravnihoprostredku) {
+    public RezervaceJizdenka(String datum, String osoba, String vytvoreno, typProstredku prostredek, String sedadlo, String odjezdoveStanoviste, String odjezdDopravnihoprostredku) {
 
-        super(datum, osoba, datumVytvoreni);
+        super(datum, osoba, vytvoreno);
 
         this.setProstredek(prostredek);
         this.setSedadlo(sedadlo);
         this.setOdjezdoveStanoviste(odjezdoveStanoviste);
-        this.setOdjezdDopravnihoprostredku(odjezdDopravnihoprostredku);
     }
 
     public typProstredku getProstredek() {

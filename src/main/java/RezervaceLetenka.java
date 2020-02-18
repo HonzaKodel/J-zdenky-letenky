@@ -1,21 +1,21 @@
-public class RezervaceLetenka extends Rezervace{
+import java.util.Date;
+
+public class RezervaceLetenka extends Rezervace {
 
     private String let;
     private String sedadlo;
     private String datumOdletu;
     private int pocetPrestupu;
 
-    public RezervaceLetenka(String datum, String osoba, String datumVytvoreni, String let, String sedadlo, String datumOdletu, int pocetPrestupu) {
+    public RezervaceLetenka(String datum, String osoba, String vytvoreno, String let, String sedadlo, String datumOdletu, int pocetPrestupu) {
 
-        super(datum, osoba, datumVytvoreni);
+        super(datum, osoba, vytvoreno);
 
         this.setLet(let);
         this.setSedadlo(sedadlo);
-        this.setDatumOdletu(datumOdletu);
         this.setPocetPrestupu(pocetPrestupu);
 
     }
-
 
     public String getLet() {
         return let;

@@ -2,19 +2,24 @@ import java.util.Date;
 
 abstract public class Rezervace {
 
+    private String datum;
     private String osoba;
-    private Date datum;
-    private Date vytvoreno;
+    private String vytvoreno;
 
-    public Rezervace(Date datum, String osoba, Date vytvoreno) {
+    public Rezervace(String datum, String osoba, String vytvoreno) {
+        this.datum = datum;
         this.osoba = osoba;
+        this.vytvoreno = vytvoreno;
+
     }
 
-    public void systemOutPrint(){
-        System.out.println(String.format("%s si objednal dne %s jízdenku s datumem odjezdu %s.", osoba, , datum ));
+    public String getDatum() {
+        return datum;
     }
 
-
+    public void setDatum(String datum) {
+        this.datum = datum;
+    }
 
     public String getOsoba() {
         return osoba;
@@ -24,5 +29,15 @@ abstract public class Rezervace {
         this.osoba = osoba;
     }
 
+    public String getVytvoreno() {
+        return vytvoreno;
+    }
 
+    public void setVytvoreno(String vytvoreno) {
+        this.vytvoreno = vytvoreno;
+    }
+
+    public void systemOutPrint(){
+        System.out.println(String.format("%s si objednal dne %s jízdenku s datumem odjezdu %s.", osoba, vytvoreno , datum));
+    }
 }

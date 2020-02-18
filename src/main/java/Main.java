@@ -5,6 +5,21 @@ import java.util.*;
 public class Main {
     public static void main(String[] args){
 
+        SimpleDateFormat DATE_FORMATER = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+
+        String formatDatum = "18-02-2020 15:44";
+        Calendar calendar = new GregorianCalendar(2020, 2, 18);
+        Date date = null;
+
+        {
+
+            try {
+                date = DATE_FORMATER.parse(formatDatum);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+        }
+
         List<Rezervace> rezervaces = new ArrayList<>();
 
         RezervaceJizdenka weebTour = new RezervaceJizdenka("15-03-2020","Erik Rusnák", "10-03-2020",typProstredku.AUTOBUS, "69", "3b", "14:15");
@@ -15,6 +30,7 @@ public class Main {
 
         RezervaceJizdenka terezinTour = new RezervaceJizdenka("12-08-2020", "Sherlock Gnomes", "06-08-2020", typProstredku.VLAK, "12c", "9 3/4", "11:00");
         rezervaces.add(terezinTour);
+
 
 
         RezervaceLetenka china = new RezervaceLetenka("08-08-2020", "Petr Lidumil", "10-02-2020", "22b58c45", "58b", "20-02-2020", 2);
