@@ -1,24 +1,48 @@
+import javafx.util.converter.TimeStringConverter;
+
+import java.security.Timestamp;
+import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) throws ParseException {
+
+        long min = 603759600000L;
+        long max = 1581980400000L;
+
+            for (int i = 0; i < 14; i++) {
+                Long timestamp = min + (long) (Math.random() * (max - min));
+                Date date = new Date(timestamp);
+
+                SimpleDateFormat DATE_FORMATER = new SimpleDateFormat("dd-MM-yyyy HH:mm");
+                String datum = DATE_FORMATER.format(date);
+
+                RezervaceJizdenka a = new RezervaceJizdenka;
+
+                System.out.println(datum);
+            }
+
+
+
 
         SimpleDateFormat DATE_FORMATER = new SimpleDateFormat("dd-MM-yyyy");
 
         String formatDatum = "18-02-2020";
         Calendar calendar = new GregorianCalendar(2020, 2, 18);
         Date date = null;
-
         {
-
             try {
                 date = DATE_FORMATER.parse(formatDatum);
             } catch (ParseException e) {
                 e.printStackTrace();
             }
         }
+
+
+
 
         List<Rezervace> rezervaces = new ArrayList<>();
 
@@ -32,9 +56,7 @@ public class Main {
         rezervaces.add(terezinTour);
 
 
-           DATE_FORMATER.parse(weebTour.getDatum());
-
-
+          //Date date1 = DATE_FORMATER.parse();
 
         RezervaceLetenka china = new RezervaceLetenka("08-08-2020", "Petr Lidumil", "10-02-2020", "22b58c45", "58b", "20-02-2020", 2);
         rezervaces.add(china);
@@ -42,11 +64,11 @@ public class Main {
         RezervaceLetenka WuChan = new RezervaceLetenka("05-03-2020", "Maho Jakotyč", "29-02-2020", "55c22v69n", "45a", "06-03-2020", 0);
         rezervaces.add(WuChan);
 
+        System.out.println(weebTour.getDatum());
 
 
         for (Rezervace rezervace : rezervaces){
             rezervace.systemOutPrint();
-
         }
     }
 }

@@ -4,7 +4,7 @@ public class RezervaceJizdenka extends Rezervace {
 
     private typProstredku Prostredek;
     private String sedadlo;
-    private String datum;
+    private String datumOdjezdu;
     private String odjezdoveStanoviste;
     private String odjezdDopravnihoprostredku;
 
@@ -33,14 +33,12 @@ public class RezervaceJizdenka extends Rezervace {
         this.sedadlo = sedadlo;
     }
 
-    @Override
-    public String getDatum() {
-        return datum;
+    public String getDatumOdjezdu() {
+        return datumOdjezdu;
     }
 
-    @Override
-    public void setDatum(String datum) {
-        this.datum = datum;
+    public void setDatumOdjezdu(String datumOdjezdu) {
+        this.datumOdjezdu = datumOdjezdu;
     }
 
     public String getOdjezdoveStanoviste() {
